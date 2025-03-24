@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+html {
+  height: 100dvh;
+}
+
+body {
+  height: 100%;
+}
+
+@layer base {
+  :root {
+    background-color: var(--background);
+  }
+}
+
+@theme {
+  --color-highlight: oklch(85.49% 0.1251 181.07); /* #5eead4 */
+  --color-primary: oklch(71.07% 0.0351 256.79); /* #94a3b8 */
+  --color-tertiary: oklch(55.1% 0.0234 264.36); /* #6b7280 */
+  --color-dim: oklch(55.44% 0.0407 257.42 / 60%); /* #64748b99 */
+  --background: #030712;
+}
