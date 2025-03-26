@@ -21,8 +21,8 @@ export default async function HomePage() {
   const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
 
   return (
-    <div className="max-w-7xl mx-auto px-10 pt-32 pb-12 flex items-start h-full gap-x-12 justify-between">
-      <div className="flex flex-col h-full">
+    <div className="max-w-7xl min-h-screen mx-auto px-10 flex items-start gap-x-12 justify-between relative">
+      <div className="flex flex-col sticky top-0 pt-32 pb-12 h-dvh">
         <div className="space-y-2.5 mb-3">
           <RawicLogo />
           <h1 className="text-5xl font-bold leading-16 text-white">Rafał Wichowski</h1>
@@ -85,7 +85,7 @@ export default async function HomePage() {
           </li>
         </ul>
       </div>
-      <div className="text-white pt-60">
+      <div className="text-white pt-92 pb-12">
         <ExperienceSection />
       </div>
     </div>
