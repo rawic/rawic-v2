@@ -8,6 +8,19 @@ body {
   height: 100%;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(5, 15, 13, 0.01) 0%, rgba(37, 117, 104, 0.16) 100%);
+  background-attachment: fixed;
+  background-position: top;
+  pointer-events: none;
+}
+
 @layer base {
   :root {
     background-color: var(--background);
@@ -22,4 +35,14 @@ body {
   --color-dim: oklch(55.44% 0.0407 257.42 / 60%); /* #64748b99 */
   --color-highlight-bg: oklch(78.45% 0.1325 181.91 / 10%); /* #2dd4bf1a */
   --background: #030712;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }

@@ -5,7 +5,7 @@ import { getYearFromDateString } from '@/app/(frontend)/utils/date'
 import { POSITION_LABELS, TAG_LABELS } from '../../utils/mappings'
 import { GlowingEffect } from '../ui/glowing-effect'
 import { RevealCard } from '../ui/reveal-card'
-import bg from '../../../../public/test.jpg'
+import bg from './../../../../../public/test5.png'
 
 export const Experience = ({
   position,
@@ -29,8 +29,10 @@ export const Experience = ({
       <article
         itemScope
         itemType="https://schema.org/OrganizationRole"
-        className="flex gap-x-10 py-6 px-5 w-full group border-1 rounded-xl border-transparent hover:border-white/5 hover:bg-[rgba(48,75,71,0.05)] transition-all justify-between group-hover/experience:opacity-50 hover:opacity-100 relative"
+        className="flex gap-x-10 py-6 px-5 w-full group border-1 rounded-xl border-transparent  transition-all justify-between group-hover/experience:opacity-50 hover:opacity-100 relative group"
       >
+        <div className="absolute top-0 left-0 w-full h-full -z-10 group-hover:bg-[radial-gradient(circle_at_center,_rgba(48,75,71,0.35)_0%,_transparent_70%)] blur-3xl transition-all" />
+
         {/* <GlowingEffect
           spread={40}
           glow={true}
