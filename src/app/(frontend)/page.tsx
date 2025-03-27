@@ -11,6 +11,7 @@ import { LinkedinIcon } from './components/icons/linkedin'
 import { CodepenIcon } from './components/icons/codepen'
 import { XIcon } from './components/icons/x'
 import { ExperienceSection } from './features/experience-section'
+import { FlipWords } from './components/ui/flip-words'
 
 export default async function HomePage() {
   const headers = await getHeaders()
@@ -20,6 +21,8 @@ export default async function HomePage() {
 
   const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
 
+  const words = ['intuitive', 'performant', 'visually compelling']
+
   return (
     <div className="max-w-7xl min-h-screen mx-auto px-10 flex items-start gap-x-12 justify-between relative">
       <div className="flex flex-col sticky top-0 pt-32 pb-12 h-dvh">
@@ -27,11 +30,10 @@ export default async function HomePage() {
           <RawicLogo />
           <h1 className="text-5xl font-bold leading-16 text-white">Rafał Wichowski</h1>
           <h2 className="text-xl leading-6 text-highlight">Senior Frontend Engineer</h2>
-          <p className="leading-6 text-primary max-w-[23rem]">
-            I build intuitive, performant, and visually compelling web experiences. Passionate about
-            React, Next.js, and TypeScript. Always eager to learn, share knowledge, and help others
-            grow.
-          </p>
+          <div className="leading-6 text-primary max-w-[23rem]">
+            I build <FlipWords words={words} /> <br /> web experiences. Passionate about React,
+            Next.js, and TypeScript. Always eager to learn, share knowledge, and help others grow.
+          </div>
         </div>
 
         <a

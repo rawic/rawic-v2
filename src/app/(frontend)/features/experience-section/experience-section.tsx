@@ -1,8 +1,11 @@
+export const dynamic = 'force-static'
+
 import payloadConfig from '@/payload.config'
 import { Experience } from '../../components/experience'
+import { Experience as ExperienceType } from '@/payload-types'
 import { getPayload } from 'payload'
 
-const getExperiences = async () => {
+const getExperiences = async (): Promise<ExperienceType[]> => {
   const payload = await getPayload({ config: payloadConfig })
   const { docs } = await payload.find({
     collection: 'experience',
@@ -15,21 +18,14 @@ const getExperiences = async () => {
 export const ExperienceSection = async () => {
   const experiences = await getExperiences()
 
+  if (!experiences || experiences.length === 0) {
+    return <p>No experience added yet.</p>
+  }
+
   return (
-    <section itemScope itemType="https://schema.org/ItemList" className="space-y-16">
+    <section itemScope itemType="https://schema.org/ItemList" className="group/experience">
       {experiences.map((experience) => (
-        <Experience
-          key={experience.id}
-          position={experience.position}
-          company={experience.company}
-          companyUrl={experience.companyUrl}
-          dateFrom={experience.dateFrom}
-          dateTo={experience.dateTo}
-          location={experience.location}
-          description={experience.description}
-          tags={experience.tags}
-          currentlyWorking={experience.currentlyWorking}
-        />
+        <Experience key={experience.id} {...experience} />
       ))}
     </section>
   )
