@@ -2,12 +2,11 @@ import { Tag } from '@/app/(frontend)/components/ui/tag'
 import { Link01 } from '@untitled-ui/icons-react'
 import { Experience as ExperienceType } from '@/payload-types'
 import { getYearFromDateString } from '@/app/(frontend)/utils/date'
-import { POSITION_LABELS, TAG_LABELS } from '../../utils/mappings'
-import { GlowingEffect } from '../ui/glowing-effect'
-import { RevealCard } from '../ui/reveal-card'
-import bg from './../../../../../public/test5.png'
+import { POSITION_LABELS, TAG_LABELS } from '../../../utils/mappings'
+import { RevealCard } from '../../../components/ui/reveal-card'
+import bg from './../../../../../../public/test5.png'
 
-export const Experience = ({
+export const ExperienceCard = ({
   position,
   company,
   companyUrl,

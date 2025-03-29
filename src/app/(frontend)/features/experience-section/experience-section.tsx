@@ -1,7 +1,7 @@
 export const dynamic = 'force-static'
 
 import payloadConfig from '@/payload.config'
-import { Experience } from '../../components/experience'
+import { ExperienceCard } from './components/experience-card'
 import { Experience as ExperienceType } from '@/payload-types'
 import { getPayload } from 'payload'
 
@@ -25,7 +25,7 @@ export const ExperienceSection = async () => {
   return (
     <section itemScope itemType="https://schema.org/ItemList" className="group/experience">
       {experiences.map((experience) => (
-        <Experience key={experience.id} {...experience} />
+        <ExperienceCard key={experience.id} {...experience} />
       ))}
     </section>
   )
