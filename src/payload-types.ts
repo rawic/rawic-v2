@@ -70,6 +70,7 @@ export interface Config {
     media: Media;
     experience: Experience;
     posts: Post;
+    projects: Project;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -80,6 +81,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     experience: ExperienceSelect<false> | ExperienceSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -201,6 +203,21 @@ export interface Post {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  title: string;
+  image: number | Media;
+  projectUrl?: string | null;
+  description: string;
+  publishedDate: string;
+  tags?: ('javascript' | 'typescript' | 'storybook' | 'nextjs' | 'html-css')[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -221,6 +238,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -325,6 +346,20 @@ export interface PostsSelect<T extends boolean = true> {
   image?: T;
   publishedDate?: T;
   views?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  title?: T;
+  image?: T;
+  projectUrl?: T;
+  description?: T;
+  publishedDate?: T;
+  tags?: T;
   updatedAt?: T;
   createdAt?: T;
 }

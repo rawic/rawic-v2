@@ -1,6 +1,6 @@
 import { getPayload } from 'payload'
 import { PostCard } from './components/post-card'
-import { Post as PostType } from '@/payload-types'
+import type { Post as PostType } from '@/payload-types'
 import payloadConfig from '@/payload.config'
 
 const getPosts = async (): Promise<PostType[]> => {
@@ -8,6 +8,7 @@ const getPosts = async (): Promise<PostType[]> => {
   const { docs } = await payload.find({
     collection: 'posts',
     sort: '-date',
+    depth: 1,
   })
 
   return docs
@@ -20,8 +21,14 @@ export const PostsSection = async () => {
     return <p>No posts added yet.</p>
   }
 
+  console.log(posts)
+
   return (
-    <section itemScope itemType="https://schema.org/ItemList" className="space-y-15 mt-36">
+    <section
+      itemScope
+      itemType="https://schema.org/ItemList"
+      className="space-y-15 mt-36 group/post"
+    >
       {posts.map((post) => (
         <PostCard key={post.id} {...post} />
       ))}

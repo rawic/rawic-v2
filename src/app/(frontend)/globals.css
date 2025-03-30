@@ -33,6 +33,7 @@ body::before {
   --color-secondary: oklch(55.44% 0.0407 257.42); /* #64748b */
   --color-tertiary: oklch(55.1% 0.0234 264.36); /* #6b7280 */
   --color-dim: oklch(55.44% 0.0407 257.42 / 60%); /* #64748b99 */
+  --color-black: oklch(0.24 0 0); /* #1e1e1e */
   --color-highlight-bg: oklch(78.45% 0.1325 181.91 / 10%); /* #2dd4bf1a */
   --background: #030712;
 }

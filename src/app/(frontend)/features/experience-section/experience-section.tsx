@@ -2,7 +2,7 @@ export const dynamic = 'force-static'
 
 import payloadConfig from '@/payload.config'
 import { ExperienceCard } from './components/experience-card'
-import { Experience as ExperienceType } from '@/payload-types'
+import type { Experience as ExperienceType } from '@/payload-types'
 import { getPayload } from 'payload'
 
 const getExperiences = async (): Promise<ExperienceType[]> => {
