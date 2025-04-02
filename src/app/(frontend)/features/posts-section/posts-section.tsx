@@ -24,11 +24,7 @@ export const PostsSection = async () => {
   console.log(posts)
 
   return (
-    <section
-      itemScope
-      itemType="https://schema.org/ItemList"
-      className="space-y-15 mt-36 group/post"
-    >
+    <section itemScope itemType="https://schema.org/ItemList" className="mt-36 group/post">
       {posts.map((post) => (
         <PostCard key={post.id} {...post} />
       ))}

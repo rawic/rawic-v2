@@ -8,6 +8,7 @@ import { HeroSidebar } from './features/hero-sidebar'
 import { PostsSection } from './features/posts-section'
 import { Footer } from './components/layout/footer'
 import { InspirationalMessage } from './components/ui/inspirational-message'
+import { FeaturedProjectsSection } from './features/featured-projects-section'
 
 export default async function HomePage() {
   const headers = await getHeaders()
@@ -21,8 +22,10 @@ export default async function HomePage() {
     <div className="max-w-7xl min-h-screen mx-auto px-10 flex items-start gap-x-12 justify-between relative">
       <HeroSidebar />
 
-      <section className="text-white pt-92 pb-12 max-w-[680px]">
+      <section className="text-white pt-[340px] pb-5 max-w-[606px]">
         <ExperienceSection />
+
+        <FeaturedProjectsSection />
 
         <PostsSection />
 

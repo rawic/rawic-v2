@@ -1,8 +1,9 @@
 import { TagProps } from './tag.types'
+import { tag } from './tag.variants'
 
-export const Tag = ({ label, as: Tag = 'li' }: TagProps) => {
+export const Tag = ({ label, color, as: Tag = 'li' }: TagProps) => {
   return (
-    <Tag className="bg-highlight-bg inline-flex text-highlight font-semibold text-xs leading-6 px-3 py-0.5 rounded-full">
+    <Tag className={tag({ color })}>
       <span itemProp="skills">{label}</span>
     </Tag>
   )

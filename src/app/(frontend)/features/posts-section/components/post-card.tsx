@@ -22,7 +22,7 @@ export const PostCard = ({
     <article
       itemScope
       itemType="https://schema.org/BlogPosting"
-      className="flex gap-6 max-w-[563px] group-hover/post:opacity-50 transition-all hover:opacity-100 group"
+      className="flex gap-6 max-w-[563px] group-hover/post:opacity-50 transition-all hover:opacity-100 group py-7"
     >
       <div
         className="w-32 h-32 overflow-hidden relative flex-shrink-0 rounded-2xl border border-black"
