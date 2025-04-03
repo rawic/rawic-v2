@@ -30,6 +30,7 @@ body::before {
 @theme {
   --color-highlight: oklch(85.49% 0.1251 181.07); /* #5eead4 */
   --color-primary: oklch(71.07% 0.0351 256.79); /* #94a3b8 */
+  --color-primary-active: oklch(0.13 0.0274 261.69 / 50%); /* #03071280 */
   --color-secondary: oklch(55.44% 0.0407 257.42); /* #64748b */
   --color-tertiary: oklch(55.1% 0.0234 264.36); /* #6b7280 */
   --color-dim: oklch(55.44% 0.0407 257.42 / 60%); /* #64748b99 */
