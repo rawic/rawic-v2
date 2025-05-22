@@ -6,11 +6,12 @@ export const Tag = ({
   label,
   color,
   as: Tag = 'li',
+  hoverable,
 }: TagProps & React.ComponentPropsWithoutRef<ElementType>) => {
   const isListItem = Tag === 'li'
 
   return (
-    <Tag className={tag({ color })} role={isListItem ? 'listitem' : undefined}>
+    <Tag className={tag({ color, hoverable })} role={isListItem ? 'listitem' : undefined}>
       <span itemProp="skills">{label}</span>
     </Tag>
   )

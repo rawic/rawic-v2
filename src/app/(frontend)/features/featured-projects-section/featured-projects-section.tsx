@@ -2,6 +2,7 @@ import type { Project as ProjectType } from '@/payload-types'
 import { getPayload } from 'payload'
 import payloadConfig from '@/payload.config'
 import { FeaturedProjectCard } from './components/featured-project-card'
+import { FeaturedProjectsSectionWrapper } from './components/featured-projects-section-wrapper'
 
 const getProjects = async (): Promise<ProjectType[]> => {
   const payload = await getPayload({ config: payloadConfig })
@@ -22,10 +23,10 @@ export const FeaturedProjectsSection = async () => {
   }
 
   return (
-    <div className="space-y-15 mb-3 mt-36">
+    <FeaturedProjectsSectionWrapper>
       {projects.map((project) => (
         <FeaturedProjectCard key={project.id} {...project} />
       ))}
-    </div>
+    </FeaturedProjectsSectionWrapper>
   )
 }

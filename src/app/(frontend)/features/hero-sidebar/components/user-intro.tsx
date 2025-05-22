@@ -8,7 +8,7 @@ export const UserIntro = () => {
     <div className="space-y-2.5 mb-3">
       <RawicLogo />
       <h1 className="text-5xl font-bold leading-16 text-white" itemProp="name">
-        Rafał Wichowski
+        ASDF
       </h1>
 
       <h2 className="text-xl leading-6 text-highlight" itemProp="jobTitle">

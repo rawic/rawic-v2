@@ -38,7 +38,7 @@ export const FeaturedProjectCard = ({
               itemProp="url"
               className="inline-block"
             >
-              <Tag label="Live demo" color="secondary" />
+              <Tag label="Live demo" color="secondary" hoverable />
             </a>
           )}
         </div>

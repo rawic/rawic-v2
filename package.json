@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "rawic",
   "version": "1.0.0",
   "description": "A blank template to get started with Payload 3.0",
   "license": "MIT",
@@ -21,6 +21,7 @@
     "@payloadcms/richtext-lexical": "latest",
     "@react-three/fiber": "^9.1.0",
     "@tailwindcss/postcss": "^4.0.14",
+    "@types/react-scroll": "^1.8.10",
     "@types/three": "^0.174.0",
     "@untitled-ui/icons-react": "^0.1.4",
     "clsx": "^2.1.1",
@@ -32,6 +33,7 @@
     "postcss": "^8.5.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-scroll": "^1.9.3",
     "sharp": "0.32.6",
     "tailwind-merge": "^3.0.2",
     "tailwind-variants": "^1.0.0",

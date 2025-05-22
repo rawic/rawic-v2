@@ -4,9 +4,11 @@ import { ArrowNarrowRight } from '@untitled-ui/icons-react'
 export const ResumeLink = () => {
   return (
     <a
-      href="#"
+      href="/pobrane.pdf"
       className="text-sm font-semibold text-white inline-flex items-center gap-1 mb-20 group/text self-start"
       aria-label="View full résumé"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <TextLineHover>View Full Résumé</TextLineHover>
       <ArrowNarrowRight

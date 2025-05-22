@@ -17,7 +17,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en" className={`${inter.className} scroll-smooth`}>
+    <html lang="en" className={`${inter.className} scroll-smooth antialiased`}>
       <body>
         <main className="h-full">{children}</main>
       </body>
