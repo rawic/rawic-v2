@@ -22,8 +22,6 @@ export const PostsSection = async () => {
     return <p>No posts added yet.</p>
   }
 
-  console.log(posts)
-
   return (
     <PostsSectionWrapper>
       <section itemScope itemType="https://schema.org/ItemList" className="mt-36 group/post px-5">

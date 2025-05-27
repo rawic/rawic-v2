@@ -24,7 +24,8 @@ export const PostCard = ({
       itemType="https://schema.org/BlogPosting"
       className="flex gap-6 max-w-[563px] group-hover/post:opacity-50 transition-all hover:opacity-100 group py-7"
     >
-      <div
+      <a
+        href={`/posts/${id}`}
         className="w-32 h-32 overflow-hidden relative flex-shrink-0 rounded-2xl border border-black"
         itemProp="image"
         itemScope
@@ -37,13 +38,13 @@ export const PostCard = ({
           className="object-cover p-3 rounded-sm"
         />
         <meta itemProp="url" content={media.url!} />
-      </div>
+      </a>
 
       <div className="flex flex-col gap-3 py-3 justify-between">
         <header>
           <a
             href={`/posts/${id}`}
-            className="inline-flex gap-x-2 mb-1 group-hover:text-highlight"
+            className="inline-flex gap-x-2 mb-1 group-hover:text-highlight hover:underline"
             itemProp="url"
           >
             <h3 className="font-bold leading-5" itemProp="headling">

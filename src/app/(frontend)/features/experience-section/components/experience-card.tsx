@@ -1,12 +1,13 @@
 import { Tag } from '@/app/(frontend)/components/ui/tag'
 import { Link01 } from '@untitled-ui/icons-react'
-import { Experience as ExperienceType } from '@/payload-types'
+import { Experience as ExperienceType, Media } from '@/payload-types'
 import { getYearFromDateString } from '@/app/(frontend)/utils/date'
 import { POSITION_LABELS, TAG_LABELS } from '../../../utils/mappings'
 import { RevealCard } from '../../../components/ui/reveal-card'
-import bg from './../../../../../../public/test5.png'
+import { cn } from '@/app/(frontend)/lib/utils'
 
 export const ExperienceCard = ({
+  image,
   position,
   company,
   companyUrl,
@@ -22,9 +23,10 @@ export const ExperienceCard = ({
   const dateFromYears = getYearFromDateString(dateFrom)
   const dateToYears = dateTo ? getYearFromDateString(dateTo) : null
   const positionLabel = position ? POSITION_LABELS[position] : null
+  const media = image as Media
 
   return (
-    <RevealCard backgroundImage={bg.src}>
+    <RevealCard backgroundImage={media.url!}>
       <article
         itemScope
         itemType="https://schema.org/OrganizationRole"
@@ -32,15 +34,6 @@ export const ExperienceCard = ({
       >
         <div className="absolute top-0 left-0 w-full h-full -z-10 group-hover:bg-[radial-gradient(circle_at_center,_rgba(48,75,71,0.35)_0%,_transparent_70%)] blur-3xl transition-all" />
 
-        {/* <GlowingEffect
-          spread={40}
-          glow={true}
-          disabled={false}
-          movementDuration={10}
-          proximity={0}
-          inactiveZone={0}
-          variant="highlight"
-        /> */}
         <div className="text-xs text-tertiary font-semibold leading-6">
           <time itemProp="startDate" dateTime={dateFrom}>
             {dateFromYears}
@@ -67,7 +60,10 @@ export const ExperienceCard = ({
                     'aria-label': `View more about ${positionLabel} at ${company}`,
                   }
                 : {})}
-              className="inline-flex gap-x-2 mb-1 group-hover:text-highlight"
+              className={cn(
+                'inline-flex gap-x-2 mb-1 group-hover:text-highlight',
+                companyUrl ? 'hover:underline' : '',
+              )}
             >
               <h3 itemProp="roleName">{positionLabel}</h3>
               <span

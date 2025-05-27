@@ -24,6 +24,10 @@ export const Project: CollectionConfig = {
       required: true,
     },
     {
+      name: 'repositoryName',
+      type: 'text',
+    },
+    {
       name: 'projectUrl',
       type: 'text',
     },

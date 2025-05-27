@@ -160,7 +160,9 @@ export interface Media {
  */
 export interface Experience {
   id: number;
+  sortOrder?: number | null;
   position: 'senior-engineer' | 'senior-frontend-engineer' | 'react-developer' | 'frontend-developer';
+  image: number | Media;
   company: string;
   companyUrl?: string | null;
   location: string;
@@ -209,6 +211,7 @@ export interface Project {
   id: number;
   title: string;
   image: number | Media;
+  repositoryName?: string | null;
   projectUrl?: string | null;
   description: string;
   publishedDate: string;
@@ -323,7 +326,9 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "experience_select".
  */
 export interface ExperienceSelect<T extends boolean = true> {
+  sortOrder?: T;
   position?: T;
+  image?: T;
   company?: T;
   companyUrl?: T;
   location?: T;
@@ -356,6 +361,7 @@ export interface PostsSelect<T extends boolean = true> {
 export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
   image?: T;
+  repositoryName?: T;
   projectUrl?: T;
   description?: T;
   publishedDate?: T;

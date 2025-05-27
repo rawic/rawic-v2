@@ -4,8 +4,8 @@ import { ArrowNarrowRight } from '@untitled-ui/icons-react'
 export const ResumeLink = () => {
   return (
     <a
-      href="/pobrane.pdf"
-      className="text-sm font-semibold text-white inline-flex items-center gap-1 mb-20 group/text self-start"
+      href="/CV-Rafal-Wichowski-EN.pdf"
+      className="text-sm font-semibold text-white inline-flex items-center gap-1 group/text self-start"
       aria-label="View full résumé"
       target="_blank"
       rel="noopener noreferrer"

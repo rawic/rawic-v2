@@ -10,6 +10,13 @@ export const Experience: CollectionConfig = {
   },
   fields: [
     {
+      name: 'sortOrder',
+      type: 'number',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'position',
       type: 'select',
       required: true,
@@ -31,6 +38,12 @@ export const Experience: CollectionConfig = {
           value: 'frontend-developer',
         },
       ],
+    },
+    {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
     },
     {
       name: 'company',

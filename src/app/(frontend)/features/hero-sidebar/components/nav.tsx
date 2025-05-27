@@ -20,7 +20,7 @@ export const Nav = () => {
 
   return (
     <nav aria-label="Main site navigation">
-      <ul className="flex flex-col gap-4 text-tertiary uppercase text-xs leading-6 font-semibold">
+      <ul className="flex flex-col gap-4 text-tertiary uppercase text-xs leading-6 font-semibold mt-20">
         {navItems.map((item, index) => {
           const isActive = activeSection === item.toLowerCase()
           const isLastElement = index === navItems.length - 1

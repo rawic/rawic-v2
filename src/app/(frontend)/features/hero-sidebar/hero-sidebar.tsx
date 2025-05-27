@@ -15,10 +15,6 @@ export const HeroSidebar = () => {
       <UserIntro />
       <ResumeLink />
       <Nav />
-
-      {/* {!user && <h1 className="text-white">Welcome to your new project.</h1>}
-{user && <h1 className="text-white">Welcome back, {user.email}</h1>} */}
-
       <Socials />
     </aside>
   )
